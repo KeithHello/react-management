@@ -10,7 +10,8 @@ const App = () => {
   return (
     <div className="App">
       <Link to="/home">Home</Link> | 
-      <Link to="/about">About</Link>
+      <Link to="/about">About</Link> |
+      <Link to="/user">About</Link>
       {/* Top level of page
       <UpCircleFilled style={{fontSize: "40px"}} /> */}
       {router}
