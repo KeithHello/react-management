@@ -1,7 +1,7 @@
 const View = () => {
     return (
-        <div className="about">
-            <p>about view</p>
+        <div className="user">
+            <p>Page 401</p>
         </div>
     );
 }
