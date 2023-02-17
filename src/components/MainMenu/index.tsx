@@ -6,12 +6,16 @@ import {
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MenuItem from 'antd/es/menu/MenuItem';
 
-type MenuItem = Required<MenuProps>['items'][number];
+type MenuItem = {
+    key: string,
+    label: string,
+    icon?: React.ReactNode,
+    children?: MenuItem[],
+};
 
 const items: MenuItem[] = [
     {
@@ -82,7 +86,7 @@ const Comp: React.FC = () => {
     // set the openKey initial value
     let initialOpenKey: string = '';
 
-    const findKey = (obj: {key: string}): boolean => {
+    const findKey = (obj: { key: string }): boolean => {
         return obj.key === currentRoute.pathname;
     }
 

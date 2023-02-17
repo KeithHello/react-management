@@ -8,15 +8,19 @@ import "reset-css";
 // global styles
 import "@/assets/styles/global.scss";
 
-// app styles
+// state management
+import { Provider } from "react-redux";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import store from "./store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );

@@ -1,4 +1,5 @@
 import Home from "../views/Home";
+import Login from "../views/Login";
 import { Navigate } from "react-router-dom";
 import React, { lazy } from "react";
 
@@ -62,6 +63,10 @@ const routes = [
                 element: withLoadingComponent(<Page5 />),
             },
         ],
+    },
+    {
+        path: "/login",
+        element: <Login />,
     },
     // 404
     {

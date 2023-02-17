@@ -1,0 +1,92 @@
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loginBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginHeader {
+    width: 450px;
+
+    h1 {
+        font-weight: bold;
+        font-size: 22px;
+        text-align: center;
+        color: #fff;
+
+        margin-bottom: 40px;
+        position: relative;
+
+        &:before, &:after {
+            content: '';
+            width: 100px;
+            height: 2px;
+            position: absolute;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), #1976D2);
+            left: -20px;
+            top: 10px;
+        }
+
+        &:after {
+            left: auto;
+            right: -20px;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), #1976D2);
+        }
+
+    }
+}
+
+.loginBody {
+  :global(.ant-input), :global(.ant-input-password) {
+    background-color: transparent;
+    border-color: #1890ff;
+    color: #fff;
+  }
+
+  :global(.ant-input-password-icon svg) {
+    color: #1890ff;
+  }
+
+  input::placeholder {
+    color: #858484;
+  }
+
+  .captchaBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .captchaImg {
+      width: 100px;
+      height: 32px;
+      margin-left: 20px;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+
