@@ -3,6 +3,7 @@ const store = {
         num: 20,
     },
     actions: {
+        // sync methods only
         SUB(newState: { num: number }, action: { val: number }) {
             newState.num -= 1;
         },

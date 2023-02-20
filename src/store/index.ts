@@ -1,10 +1,11 @@
-import { legacy_createStore, combineReducers } from "redux";
+import { legacy_createStore, combineReducers, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import handlereArr from "./ArrState/reducer";
 import handlerNum from "./NumState/reducer";
 import handlerXxxx from "./XxxxState/reducer";
 
 // combine reducer
-const reducer = combineReducers({
+const reducers = combineReducers({
     handlereArr,
     handlerNum,
     handlerXxxx,
@@ -12,8 +13,10 @@ const reducer = combineReducers({
 
 
 // enable redux devtools
-const store = legacy_createStore(reducer, 
-    window.__REDUX_DEVTOOLS_EXTENSION__ 
-    && window.__REDUX_DEVTOOLS_EXTENSION__());
+let composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+
+// combine reducer, redux-dev-tools(browser) and redux-thunk
+const store = legacy_createStore(reducers, 
+    composeEnhancers(applyMiddleware(thunk)));
 
 export default store;
