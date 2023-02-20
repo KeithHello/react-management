@@ -1,20 +1,35 @@
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const View = () => {
     // get the state from redux
-    const num = useSelector((state: RootState) => state.num);
+    const { arr, num } = useSelector((state: RootState) =>
+    ({
+        arr: state.handlereArr.arr,
+        num: state.handlerNum.num
+    })
+    );
 
     // modify the state
     const dispatch = useDispatch();
-    const add = () => {
-        dispatch({type: "ADD", val: 3});
+    const changeNum = () => {
+        dispatch({ type: "ADD", val: 100 });
+    }
+    const changeArr = () => {
+        dispatch({ type: "arrPush", val: 30 });
     }
 
     return (
         <div className="page">
-            <p>This is Page 1</p>
-            <div>{num}</div>
-            <button onClick={add}>Add</button>
+            <p>Module Redux Demo</p>
+            <div style={{margin: '20px 10px'}}>
+                <div>Num Demo: {num}</div>
+                <button onClick={changeNum}>Add</button>
+            </div>
+
+            <div style={{margin: '20px 10px'}}>
+                <div>Array Demo: {arr}</div>
+                <button onClick={changeArr}>Add array</button>
+            </div>
         </div>
     );
 }

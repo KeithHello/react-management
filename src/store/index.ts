@@ -1,5 +1,15 @@
-import { legacy_createStore } from "redux";
-import reducer from "./reducer.ts"
+import { legacy_createStore, combineReducers } from "redux";
+import handlereArr from "./ArrState/reducer";
+import handlerNum from "./NumState/reducer";
+import handlerXxxx from "./XxxxState/reducer";
+
+// combine reducer
+const reducer = combineReducers({
+    handlereArr,
+    handlerNum,
+    handlerXxxx,
+});
+
 
 // enable redux devtools
 const store = legacy_createStore(reducer, 
