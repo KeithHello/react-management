@@ -14,11 +14,11 @@ With this template, you can easily develop your own application.
 - Use Mockjs to simulate the API response
 - Provide both sync and async usage of redux
 
-![Login](.\readme\login.png)
+![Login](./readme/login.png)
 
-![Main Page](.\readme\main_page.png)
+![Main Page](./readme/main_page.png)
 
-![Main Page (shrink)](.\readme\main_page_shrink.png)
+![Main Page (shrink)](./readme/main_page_shrink.png)
 
 ## Main tech stack
 
