@@ -3,13 +3,14 @@ import ReactDOM from "react-dom/client";
 // remove all default browser styles
 import "reset-css";
 
-// UI framework styles
-
 // global styles
 import "@/assets/styles/global.scss";
 
 // state management
 import { Provider } from "react-redux";
+
+// mockjs
+import "@/mock";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";

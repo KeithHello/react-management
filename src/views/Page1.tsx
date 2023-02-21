@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import numState from "@/store/NumState";
 
 const View = () => {
     // get the state from redux
@@ -12,7 +13,7 @@ const View = () => {
     // modify the state
     const dispatch = useDispatch();
     const changeNum = () => {
-        dispatch({ type: "ADD", val: 100 });
+        dispatch({ type: "add", val: 100 });
     }
     const changeArr = () => {
         dispatch({ type: "arrPush", val: 30 });
@@ -20,27 +21,23 @@ const View = () => {
 
     // async modify the state using redux-thunk
     const changeNum2 = () => {
-        dispatch((dispatch: Function) => {
-            setTimeout(() => {
-                dispatch({ type: "ADD", val: 100 });
-            }, 1000);
-        });
+        dispatch(numState.asyncActions.sub_async);
     }
 
     return (
         <div className="page">
             <p>Module Redux Demo</p>
-            <div style={{margin: '20px 10px'}}>
+            <div style={{ margin: '20px 10px' }}>
                 <div>Num Demo: {num}</div>
                 <button onClick={changeNum}>Add</button>
             </div>
 
-            <div style={{margin: '20px 10px'}}>
+            <div style={{ margin: '20px 10px' }}>
                 <div>Array Demo: {arr}</div>
                 <button onClick={changeArr}>Add array</button>
             </div>
 
-            <div style={{margin: '20px 10px'}}>
+            <div style={{ margin: '20px 10px' }}>
                 <div>Async Num Demo: {num}</div>
                 <button onClick={changeNum2}>Add</button>
             </div>

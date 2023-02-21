@@ -4,14 +4,24 @@ const store = {
     },
     actions: {
         // sync methods only
-        SUB(newState: { num: number }, action: { val: number }) {
+        sub(newState: { num: number }, action: { val: number }) {
             newState.num -= 1;
         },
-        ADD(newState: { num: number }, action: { val: number }) {
+        add(newState: { num: number }, action: { val: number }) {
             newState.num += action.val;
         }
     },
-    actionNames: {}
+    actionNames: {},
+    asyncActions: {
+        // async methods only
+        sub_async(dispatch: Function, value: number) {
+            console.log(value)
+
+            setTimeout(() => {
+                dispatch({ type: "ADD", val: 100 });
+            }, 1000);
+        }
+    }
 }
 
 // This is a little bit of a hack to get the action names

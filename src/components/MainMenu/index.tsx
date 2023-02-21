@@ -78,8 +78,6 @@ const Comp: React.FC = () => {
     const currentRoute = useLocation();
 
     const menuClick = (e: { key: string }) => {
-        console.log("menuClick", e.key);
-
         navigateTo(e.key);
     };
 

@@ -5,7 +5,12 @@
     actions: {
         // methods
     },
-    actionNames: {}
+    actionNames: {
+        // sync methods only
+    },
+    asyncActions: {
+        // async methods only
+    }
 }
 
 // This is a little bit of a hack to get the action names

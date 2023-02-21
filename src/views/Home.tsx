@@ -33,7 +33,7 @@ const View: React.FC = () => {
                     <Outlet />
                 </Content>
                 {/* right side footer */}
-                <Footer style={{ textAlign: 'center', lineHeight: '48px', padding: 0 }}>Ant Design ©2023 Created by Ant UED</Footer>
+                <Footer style={{ textAlign: 'center', lineHeight: '48px', padding: 0 }}>React Management System ©2023 Created by KeithHello</Footer>
             </Layout>
         </Layout>
     );
